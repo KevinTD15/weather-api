@@ -25,10 +25,10 @@ export default function Navbar({ location }: Props) {
     if (value.length >= 3) {
       try {
         const res = await axios.get(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${value}&appid=${API_KEY}&cnt=10`
+          `https://api.openweathermap.org/data/2.5/find?q=${value}&appid=${API_KEY}`
         );
         const suggestions = res.data.list.map((item: any) => item.name);
-        setShowSuggestion(suggestions);
+        setSuggestions(suggestions);
         setError("");
         setShowSuggestion(true);
       } catch (error) {
@@ -49,7 +49,7 @@ export default function Navbar({ location }: Props) {
   function handleSubmitSearch(e: React.FormEvent<HTMLFormElement>) {
     setLoadingCity(true);
     e.preventDefault();
-    if (suggestions.length === 0) {
+    if (suggestions.length == 0) {
       setError("Location not found");
       setLoadingCity(false);
     } else {
