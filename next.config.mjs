@@ -9,4 +9,7 @@ export default {
     unoptimized: true,
   },
   output: "export",
+  env: {
+    NEXT_PUBLIC_WEATHER_KEY: process.env.NEXT_PUBLIC_WEATHER_KEY,
+  },
 };
