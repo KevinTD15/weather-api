@@ -77,7 +77,7 @@ export default function Home() {
     queryKey: ["repoData"],
     queryFn: async () => {
       const { data } = await axios.get(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&cnt=10`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&cnt=56`
       );
       return data;
     },
@@ -88,7 +88,7 @@ export default function Home() {
   }, [place, refetch]);
 
   const date = data?.list[0];
-  console.log("data", data);
+  console.log("data...", data?.city.name);
 
   const uniqueDates = [
     ...new Set(
