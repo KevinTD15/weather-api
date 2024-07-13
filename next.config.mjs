@@ -6,5 +6,7 @@ export default {
         hostname: "openweathermap.org",
       },
     ],
+    unoptimized: true,
   },
+  output: "export",
 };
