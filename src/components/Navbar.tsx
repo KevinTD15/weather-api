@@ -68,7 +68,7 @@ export default function Navbar({ location }: Props) {
         try {
           setLoadingCity(true);
           const res = await axios.get(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&long=${longitude}&appid=${API_KEY}`
+            `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`
           );
           setTimeout(() => {
             setLoadingCity(false);
