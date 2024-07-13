@@ -88,7 +88,6 @@ export default function Home() {
   }, [place, refetch]);
 
   const date = data?.list[0];
-  console.log("data...", data?.city.name);
 
   const uniqueDates = [
     ...new Set(
